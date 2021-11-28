@@ -15,8 +15,13 @@ public class StudentService  {
 	private StudentRepository studentRepository;
 	
 
-	public Student addStudent(Student student){
-        return studentRepository.save(student);
+	public Student addStudent(Student student){  //3.
+        return studentRepository.save(student);  //4.
     }
 	
+
+    public Iterable<Student> allStudent(){
+        return studentRepository.findAll();
+    }
+
 }

@@ -1,5 +1,6 @@
 package com.myproject.restexample.controller;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -31,7 +32,14 @@ public class StudentController {
 	    public Student addDetails(@RequestBody Student student){   //1.
 	        return studentService.addStudent(student);  //2.
 	    }
+	    
+	    
 
-	
+	    
+	    //For all student
+	    @GetMapping("/all-students")
+	    public Iterable<Student> findAll(){
+	        return studentService.allStudent();
+	    }
 
 }
