@@ -23,5 +23,9 @@ public class StudentService  {
     public Iterable<Student> allStudent(){
         return studentRepository.findAll();
     }
-
+    
+    public Student getStudent(Integer id){
+        return studentRepository.getById(id);
+    }
+    //getById method is in the JpaRepository, finds the passing id available or not in the database. if available passing details as the pahtVariable
 }
